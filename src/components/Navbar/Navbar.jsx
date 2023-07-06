@@ -1,4 +1,5 @@
-import "./style.css"
+import './style.css'
+import Carrito from '../Carrito/Carrito.jsx'
 
 function Navbar() {
 
@@ -15,6 +16,8 @@ function Navbar() {
             <li><a href="">Tienda</a></li>
             <li><a href="">Contacto</a></li>
          </ul>
+
+         <Carrito />
 
       </nav>
 

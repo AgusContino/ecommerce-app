@@ -1,6 +1,7 @@
 nav{
    display: flex;
    justify-content: space-around;
+   background-color: white;
 }
 ul{
    list-style-type: none;
