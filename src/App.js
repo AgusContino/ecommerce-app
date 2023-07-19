@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Productos from './components/Productos/Productos';
+import ContenedorProductos from './components/ContenedorProductos/ContenedorProductos';
 
 function App() {
    return (
@@ -12,7 +12,6 @@ function App() {
          </header>
          
          <ItemListContainer saludo="¡Bienvenidos a Lunatica!" />
-         <Productos />
 
       </div>
    );
