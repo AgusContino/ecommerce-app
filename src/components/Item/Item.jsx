@@ -1,8 +1,8 @@
 import './style.scss'
 
-function TarjetaProducto(props) {
+function Item(props) {
 
-   const {nombre,marca,genero,jugadores,edades,imagen,pais,precio} = props
+   const {nombre,marca,genero,jugadores,edades,imagen,origen,precio} = props
 
    return(
       <div className='productCard'>
@@ -12,10 +12,10 @@ function TarjetaProducto(props) {
          <p>Genero: {genero}</p>
          <p>JugadoreS: {jugadores}</p>
          <p>Edades: {edades}</p>
-         <p>Origen: {pais}</p>
+         <p>Origen: {origen}</p>
          <p>Valor: <span>${precio}</span></p>
       </div>
    )
 }
 
-export default TarjetaProducto
+export default Item

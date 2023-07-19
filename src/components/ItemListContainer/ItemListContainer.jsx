@@ -1,7 +1,7 @@
 import "./style.scss"
 import { useState, useEffect } from "react";
 import getData from "../../datos/datos";
-import TarjetaProducto from "../TarjetaProducto/TarjetaProducto";
+import Item from "../Item/Item";
 
 function ItemListContainer(props) {
 
@@ -21,7 +21,7 @@ function ItemListContainer(props) {
          <h2 className='contenedorProductos__titulo'>Nuestro catálogo lunatico</h2>
          <div className="contenedorProductos__contenedor">
             {productos.map((producto) => (
-               <TarjetaProducto key={producto.id} {...producto}></TarjetaProducto>
+               <Item key={producto.id} {...producto}></Item>
             ))}
          </div>
       </div>
