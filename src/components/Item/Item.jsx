@@ -1,8 +1,9 @@
 import './style.scss'
+import { Link } from 'react-router-dom'
 
 function Item(props) {
 
-   const {nombre,marca,genero,jugadores,edades,imagen,origen,precio} = props
+   const {id,nombre,marca,genero,jugadores,edades,imagen,origen,precio} = props
 
    return(
       <div className='productCard'>
@@ -14,6 +15,9 @@ function Item(props) {
          <p>Edades: {edades}</p>
          <p>Origen: {origen}</p>
          <p>Valor: <span>${precio}</span></p>
+         <Link to={`/product/${id}`}>
+            <button>Ver detalles</button>
+         </Link>
       </div>
    )
 }

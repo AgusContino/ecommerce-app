@@ -1,5 +1,6 @@
 import './style.css'
 import Carrito from '../Carrito/Carrito.jsx'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
 
@@ -7,14 +8,15 @@ function Navbar() {
 
       <nav>
 
-         <a href="./index.html">
+         <Link to="/">
             <h1>Lunática</h1>
-         </a>
+         </Link>
 
          <ul>
             <li><a href="">Home</a></li>
-            <li><a href="">Tienda</a></li>
-            <li><a href="">Contacto</a></li>
+            <li><a href="">Estrategia</a></li>
+            <li><a href="">Rol</a></li>
+            <li><a href="">Cartas</a></li>
          </ul>
 
          <Carrito />
