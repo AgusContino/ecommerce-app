@@ -1,6 +1,6 @@
 import './style.scss'
 import { useEffect,useState } from 'react'
-import { getProduct } from '../../datos/datos'
+import { getProductData } from '../../datos/datos'
 import { useParams } from 'react-router-dom'
 
 function ItemDetailContainer() {
@@ -10,7 +10,7 @@ function ItemDetailContainer() {
 
    async function requestProduct() {
 
-      const respuesta = await getProduct(id)
+      const respuesta = await getProductData(id)
       setProduct(respuesta)
       
    }
