@@ -2,6 +2,7 @@ import './style.scss'
 import { useEffect,useState } from 'react'
 import { getProductData } from '../../datos/datos'
 import { useParams } from 'react-router-dom'
+import ItemCount from '../ItemCount/ItemCount'
 
 function ItemDetailContainer() {
 
@@ -29,6 +30,7 @@ function ItemDetailContainer() {
          <p>Edades: {product.edades}</p>
          <p>Origen: {product.origen}</p>
          <p>Valor: <span>${product.precio}</span></p>
+         <ItemCount/>
       </div>
    )
 }
