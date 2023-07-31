@@ -21,18 +21,20 @@ function Navbar() {
                </Link>
             </li>
             <li>
-            <Link to="/category/rol">
+               <Link to="/category/rol">
                   <h2>Rol</h2>
                </Link>
             </li>
             <li>
-            <Link to="/category/cartas">
+               <Link to="/category/cartas">
                   <h2>Cartas</h2>
                </Link>
             </li>
          </ul>
 
-         <Carrito />
+         <Link to="/carrito">
+            <Carrito />
+         </Link>
       </nav>
    );
 }

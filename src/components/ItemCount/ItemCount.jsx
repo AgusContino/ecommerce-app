@@ -1,26 +1,22 @@
 import "./style.scss";
 import { useState } from "react";
 
-function ItemCount() {
+function ItemCount(props) {
+   const {stock, onAddToCart} = props
 
-   const [contador, setContador] = useState(0)
+   const [contador, setContador] = useState(1)
 
    function sumar() {
-      contador < 9
+      contador < 9 && contador < stock
       ? setContador(contador+1)
       : setContador(contador)
    }
    function restar() {
-      contador > 0
+      contador > 1
       ? setContador(contador-1)
       : setContador(contador)
    }
-   function meterAlCarrito() {
-      contador > 0 && contador < 10
-      ? alert("sumar al carrito")
-      : alert("cantidad invalida")
-   }
-
+  
    return (
       <div className="countContainer">
 
@@ -28,11 +24,11 @@ function ItemCount() {
 
          <div className="controles">
             <button onClick={restar}>-</button>
-            <input type="number" id="cantidad" name="cantidad" min="0" max="9" value={contador} />
+            <span className="numeroContador">{contador}</span>
             <button onClick={sumar}>+</button>
          </div>
 
-         <button onClick={meterAlCarrito}>Añadir al Carrito</button>
+         <button onClick={() => onAddToCart(contador)}>Añadir al Carrito</button>
 
       </div>
    );

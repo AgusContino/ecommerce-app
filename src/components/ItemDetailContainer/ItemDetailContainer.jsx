@@ -1,27 +1,34 @@
-import './style.scss'
-import { useEffect,useState } from 'react'
-import { getProductData } from '../../datos/datos'
-import { useParams } from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount'
+import "./style.scss";
+import { useEffect, useState } from "react";
+import { getProductData } from "../../datos/datos";
+import { useParams } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
 
 function ItemDetailContainer() {
+   const {addToCart} = useContext(cartContext)
 
-   const [product, setProduct] = useState({})
-   const {id} = useParams()
+   const [product, setProduct] = useState({});
+   const { id } = useParams();
 
    async function requestProduct() {
-
-      const respuesta = await getProductData(id)
-      setProduct(respuesta)
-      
+      const respuesta = await getProductData(id);
+      setProduct(respuesta);
    }
 
-   useEffect(()=>{
-      requestProduct()
-   }, [])
+   function handleAddToCart(contador) {
+      addToCart(product, contador)
+   }
 
-   return(
-      <div className='productDetail'>
+   useEffect(() => {
+      requestProduct();
+   }, []);
+   
+   const stock = 3; //!esto despues hay que pasarlo a la base de datos
+
+   return (
+      <div className="productDetail">
          <h3>{product.nombre}</h3>
          <p>Fabricante: {product.marca}</p>
          <img src={product.imagen} alt={product.nombre} />
@@ -29,10 +36,15 @@ function ItemDetailContainer() {
          <p>JugadoreS: {product.jugadores}</p>
          <p>Edades: {product.edades}</p>
          <p>Origen: {product.origen}</p>
-         <p>Valor: <span>${product.precio}</span></p>
-         <ItemCount/>
-      </div>
-   )
+         <p>
+            Valor: <span>${product.precio}</span>
+         </p>
+         <p>
+            Stock: <span>{stock}</span> disponibles
+         </p>
+         <ItemCount onAddToCart={handleAddToCart} stock={stock} />
+      </div> //!luego hay que tomar de la base de datos los dos stock: del P stock y del item count stock
+   );
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
