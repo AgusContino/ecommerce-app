@@ -4,33 +4,49 @@ import getData from "../../datos/datos";
 import Item from "../Item/Item";
 import { getCategoryData } from "../../datos/datos";
 import { useParams } from "react-router-dom";
+import { SuperBalls } from '@uiball/loaders';
 
 function ItemListContainer(props) {
-  const [productos, setProductos] = useState([]);
-  const { categoryId } = useParams();
+   const [productos, setProductos] = useState([]);
+   const { categoryId } = useParams();
 
-  async function traerProductos() {
-    const respuesta = categoryId
-      ? await getCategoryData(categoryId)
-      : await getData();
+   async function traerProductos() {
+      const respuesta = categoryId
+         ? await getCategoryData(categoryId)
+         : await getData();
 
-    setProductos(respuesta);
-  }
-  useEffect(() => {
-    traerProductos();
-  });
+      setProductos(respuesta);
+   }
+   useEffect(() => {
+      traerProductos();
+   });
 
-  return (
-    <div className="itemListContainer">
-      <p className="saludo">{props.saludo}</p>
-      <h2 className="contenedorProductos__titulo">Nuestro catálogo lunatico</h2>
-      <div className="contenedorProductos__contenedor">
-        {productos.map((producto) => (
-          <Item key={producto.id} {...producto}></Item>
-        ))}
-      </div>
-    </div>
-  );
+      return (
+         <div className="itemListContainer">
+            <p className="saludo">{props.saludo}</p>
+            <h2 className="contenedorProductos__titulo">Nuestro catálogo lunatico</h2>
+
+            { // loader
+               productos.length === 0
+                  ? <div className="superBalls">
+                     <SuperBalls
+                        size={150}
+                        speed={1.5}
+                        color="white"
+                     />
+                  </div>
+                  : ""
+            }
+         
+            <div className="contenedorProductos__contenedor">
+               {productos.map((producto) => (
+                  <Item key={producto.id} {...producto}></Item>
+               ))}
+            </div>
+         </div>
+      );
+
+
 }
 
 export default ItemListContainer;

@@ -5,13 +5,20 @@ import { cartContext } from "../../context/cartContext";
 
 function Carrito() {
 
-   const {cart} = useContext(cartContext)
+   const { totalItemsInCart } = useContext(cartContext)
 
-   return(
+   return (
       <div className="carrito">
-         <p><FaShoppingCart /></p><span>{cart.length}</span>
+         <p><FaShoppingCart /></p>
+         {
+            totalItemsInCart() != 0
+               ? <span>{totalItemsInCart()}</span>
+               : ""
+         }
+
       </div>
    )
 
 }
+
 export default Carrito
