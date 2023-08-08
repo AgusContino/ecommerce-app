@@ -1,6 +1,6 @@
 import "./style.scss";
 import { useEffect, useState } from "react";
-import { getProductData } from "../../datos/datos";
+import { getProductData } from "../../services/firebase";
 import { useParams } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";

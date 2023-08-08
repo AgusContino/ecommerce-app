@@ -1,10 +1,9 @@
 import "./style.scss";
 import { useState, useEffect } from "react";
-import getData from "../../datos/datos";
 import Item from "../Item/Item";
-import { getCategoryData } from "../../datos/datos";
 import { useParams } from "react-router-dom";
 import { SuperBalls } from '@uiball/loaders';
+import { getData, getCategoryData } from "../../services/firebase";
 
 function ItemListContainer(props) {
    const [productos, setProductos] = useState([]);
@@ -19,7 +18,7 @@ function ItemListContainer(props) {
    }
    useEffect(() => {
       traerProductos();
-   });
+   },[categoryId]);
 
       return (
          <div className="itemListContainer">

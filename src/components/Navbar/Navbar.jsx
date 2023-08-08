@@ -16,17 +16,17 @@ function Navbar() {
                </Link>
             </li>
             <li>
-               <Link to="/category/estrategia">
+               <Link to="/category/Estrategia">
                   <h2>Estrategia</h2>
                </Link>
             </li>
             <li>
-               <Link to="/category/rol">
+               <Link to="/category/Rol">
                   <h2>Rol</h2>
                </Link>
             </li>
             <li>
-               <Link to="/category/cartas">
+               <Link to="/category/Cartas">
                   <h2>Cartas</h2>
                </Link>
             </li>
