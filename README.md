@@ -4,10 +4,11 @@ Proyecto desarrollado por Agustin Contino durante el curso de React JS de Coderh
 
 ## Descripcion
 
-Se trata de un e-commerce desarrollado con React JS en el cual se implenentan las siguientes tecnologias y librerias: /
-Sass para la configuracion de estilos. /
-Firebase (firestore) como base de datos para la realizacion de llamadas y escritura. /
-Sweet Alert 2 para desencadenar alertas con timer y redirecciones con useNavigate. /
+Se trata de un e-commerce desarrollado con React JS en el cual se implenentan las siguientes tecnologias y librerias:
+
+* Sass para la configuracion de estilos.
+* Firebase (firestore) como base de datos para la realizacion de llamadas y escritura.
+* Sweet Alert 2 para desencadenar alertas con timer y redirecciones con useNavigate.
 
 ## Acceso al proyecto
 
