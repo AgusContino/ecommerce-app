@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export default function OrderTicket() {
 
    const [order, setOrder] = useState({
+      id:"",
       user: {
          nombre:"",
          apellido:""
@@ -26,12 +27,12 @@ export default function OrderTicket() {
    
    return(
       <div>
-         <h2>Detalle de tu compra:</h2>
-         <p>Datos:</p>
+         <h2>Datos de tu compra:</h2>
+         <p>Identificador: {order.id}</p>
          <p>Nombre: {order.user.nombre}</p>
          <p>Apellido: {order.user.apellido}</p>
          <p>Total de compra: {order.totalPrice}</p>
-
+         <Link to="/"><button>Volver al listado</button></Link>
       </div>
    )
 }
