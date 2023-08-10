@@ -12,8 +12,8 @@ Se trata de un e-commerce desarrollado con React JS en el cual se implenentan la
 
 ## Acceso al proyecto
 
-Se puede acceder al proyecto en linea a traves del siguiente link: /
-https://app.netlify.com/sites/lunatica/overview /
+Se puede acceder al proyecto en linea a traves del siguiente link:  
+https://app.netlify.com/sites/lunatica/overview
 
 ## Clonando proyecto
 
@@ -21,10 +21,10 @@ Para clonar y hacer funcionar esta aplicacion necesitarás [Git](https://git-scm
 
 ```bash
 # Clonar repositorio
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+$ git clone https://github.com/AgusContino/ecommerce-app
 
 # Ir al repositorio
-$ cd electron-markdownify
+$ cd ecommerce-app
 
 # Instalar dependencias
 $ npm install
@@ -32,5 +32,3 @@ $ npm install
 # Correr la aplicacion
 $ npm start
 ```
-
-
