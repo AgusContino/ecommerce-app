@@ -40,6 +40,7 @@ function CartContainer() {
             }
          </div>
          <div>
+         <Link to="/checkout"><button>Terminar compra</button></Link>
             <button onClick={clearCart}>Vaciar Carrito</button>
          </div>
       </div>

@@ -1,7 +1,7 @@
 import "./style.scss";
 import { useEffect, useState } from "react";
 import { getProductData } from "../../services/firebase";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
@@ -26,7 +26,7 @@ function ItemDetailContainer() {
       requestProduct();
    }, []);
 
-   const stock = 3; //!esto despues hay que pasarlo a la base de datos
+   const stock = product.stock
 
    if (product.nombre === undefined) {
       return ( // loader
@@ -54,8 +54,15 @@ function ItemDetailContainer() {
             <p>
                Stock: <span>{stock}</span> disponibles
             </p>
-            <ItemCount onAddToCart={handleAddToCart} stock={stock} producto={product.nombre} />
-         </div> //!luego hay que tomar de la base de datos los dos stock: del P stock y del item count stock
+            {
+               stock <= 0
+               ?  <>
+                     <p>No quedan unidades disponibles</p>
+                     <Link to="/"><button>Volver al listado</button></Link>
+                  </>
+               : <ItemCount onAddToCart={handleAddToCart} stock={stock} producto={product.nombre} />
+            }
+         </div>
       );
    }
 

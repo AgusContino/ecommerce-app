@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore, writeBatch, collection, doc, getDocs, where, query, getDoc } from "firebase/firestore"
+import {getFirestore, writeBatch, collection, doc, getDocs, where, query, getDoc, addDoc } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDppmMK9O1ePj0QLmjHoIfyzWfsNGqb5UI",
@@ -48,7 +48,18 @@ async function getProductData(idURL) {
 
 }
 
+async function exportOrderData(orderData){
+   const collectionRef = collection(db,"orders")
+   const createdDoc = await addDoc(collectionRef,orderData)
+   return createdDoc.id
+}
 
+async function getOrderData(orderId){
+   const docRef = doc(db,"orders",orderId)
+   const docSnap = await getDoc(docRef)
+
+   return({id: docSnap.id, ...docSnap.data()})
+}
 
 async function exportProductsBatch() {
    
@@ -232,4 +243,4 @@ async function exportProductsBatch() {
    await batch.commit()
 }
 
-export {getData, getCategoryData, getProductData}
+export {getData, getCategoryData, getProductData, exportOrderData, getOrderData}
