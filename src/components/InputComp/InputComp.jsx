@@ -6,7 +6,7 @@ export default function InputComp(props) {
 
    return(
 
-      <div>
+      <div className='inputComp'>
 
          <label htmlFor={name}>{label}</label>
          <input name={name} type="text" value={value} onChange={onChange} />

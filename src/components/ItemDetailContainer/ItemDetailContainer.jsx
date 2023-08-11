@@ -40,7 +40,7 @@ function ItemDetailContainer() {
       );
    } else {
       return (
-         <div className="productDetail">
+         <div className="itemDetailContainerComp">
             <h3>{product.nombre}</h3>
             <p>Fabricante: {product.marca}</p>
             <img src={product.imagen} alt={product.nombre} />

@@ -16,7 +16,7 @@ function CartContainer() {
       )
    }
    return (
-      <div className='cart'>
+      <div className='cartContainerComp'>
          <div>
             <p className='precioTotal'>Precio total de la compra: ${totalPriceInCart()}</p>
          </div>
@@ -26,7 +26,7 @@ function CartContainer() {
                   const { nombre, precio, imagen, count, id } = item
                   return (
                      <div className='cartItem'>
-                        <h2>{nombre}</h2>
+                        <h3>{nombre}</h3>
                         <p>cantidad: {count}</p>
                         <img src={imagen} alt={nombre} />
                         <p>precio unitario: {precio}</p>

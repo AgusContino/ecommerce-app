@@ -73,7 +73,7 @@ export default function Checkout() {
 
    return (
 
-      <div>
+      <div className='checkoutComponent'>
 
          <h2>Checkout</h2>
 

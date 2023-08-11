@@ -13,7 +13,7 @@ Se trata de un e-commerce desarrollado con React JS en el cual se implenentan la
 ## Acceso al proyecto
 
 Se puede acceder al proyecto en linea a traves del siguiente link:  
-https://app.netlify.com/sites/lunatica/overview
+https://lunatica.netlify.app/
 
 ## Clonando proyecto
 

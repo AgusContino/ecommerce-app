@@ -1,8 +1,11 @@
-.productDetail{
+.itemDetailContainerComp{
+   box-sizing: border-box;
    background-color: white;
    border: 2px solid black;
    width: 300px;
-   margin: 25px auto 0 auto;
+   padding: 25px;
+   border-radius: 20px;
+   margin: 25px auto;
    p{
       margin: 5px;
    }
