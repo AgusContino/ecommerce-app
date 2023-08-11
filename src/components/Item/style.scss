@@ -1,27 +1,30 @@
-.itemComp{
+.itemComp {
    box-sizing: border-box;
    background-color: white;
    border: 2px solid black;
    width: 300px;
    padding: 25px;
    border-radius: 20px;
-   
-   &:hover{
+
+   &:hover {
       scale: 1.05;
    }
 
-   h3{
+   h3 {
       text-align: center;
       margin-block: 10px;
    }
-   img{
+
+   img {
       display: block;
       margin: 10px auto;
    }
-   p{
+
+   p {
       margin-block: 5px;
    }
-   .Link{
+
+   .Link {
       width: fit-content;
       margin: 10px auto 0px auto
    }

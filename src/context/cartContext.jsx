@@ -7,8 +7,8 @@ function CartContextProvider(props) {
 
    const [cart, setCart] = useState([])
 
-   function addToCart(product,count) { // mejorar: que no genere duplicados
-      setCart([...cart,{...product,count}])
+   function addToCart(product, count) { // mejorar: que no genere duplicados
+      setCart([...cart, { ...product, count }])
    }
 
    function removeItem(id) {
@@ -33,7 +33,7 @@ function CartContextProvider(props) {
       cart.forEach(item => {
          totalPrice = totalPrice + item.precio * item.count
       });
-      return(totalPrice)
+      return (totalPrice)
    }
 
    return (
@@ -53,4 +53,4 @@ function CartContextProvider(props) {
    )
 }
 
-export {CartContextProvider,cartContext}
+export { CartContextProvider, cartContext }

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Item(props) {
 
-   const {id,nombre,marca,genero,jugadores,edades,imagen,origen,precio} = props
+   const { id, nombre, marca, genero, jugadores, edades, imagen, origen, precio } = props
 
-   return(
+   return (
       <div className='itemComp'>
          <h3>{nombre}</h3>
          <img src={imagen} alt={nombre} />

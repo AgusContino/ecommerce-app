@@ -56,11 +56,11 @@ function ItemDetailContainer() {
             </p>
             {
                stock <= 0
-               ?  <>
+                  ? <>
                      <p>No quedan unidades disponibles</p>
                      <Link to="/"><button>Volver al listado</button></Link>
                   </>
-               : <ItemCount onAddToCart={handleAddToCart} stock={stock} producto={product.nombre} />
+                  : <ItemCount onAddToCart={handleAddToCart} stock={stock} producto={product.nombre} />
             }
          </div>
       );

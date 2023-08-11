@@ -3,12 +3,12 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 
-function Carrito() {
+function CartWidget() {
 
    const { totalItemsInCart } = useContext(cartContext)
 
    return (
-      <div className="carrito">
+      <div className="CartWidgetComp">
          <p><FaShoppingCart /></p>
          {
             totalItemsInCart() != 0
@@ -21,4 +21,4 @@ function Carrito() {
 
 }
 
-export default Carrito
+export default CartWidget

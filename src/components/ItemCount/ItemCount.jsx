@@ -22,7 +22,7 @@ function ItemCount(props) {
    if (mostrarContador) {
       return (
 
-         <div className="countContainer">
+         <div className="itemCountComp">
 
             <p>Cantidad:</p>
 
@@ -38,7 +38,7 @@ function ItemCount(props) {
       );
    } else {
       return (
-         <div className="countContainer--productoAgregado">
+         <div className="itemCountComp--productoAgregado">
 
             <p>Sumaste {contador} unidades de "{producto}" al carrito</p>
 
@@ -49,7 +49,7 @@ function ItemCount(props) {
 
                <button onClick={() => setmostrarContador(true)}>Agregar más</button>
             </div>
-            
+
          </div>
       )
    }

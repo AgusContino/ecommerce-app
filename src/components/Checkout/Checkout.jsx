@@ -7,8 +7,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
-const mySwal = withReactContent(Swal)
-
 export default function Checkout() {
 
    const { cart, totalPriceInCart, clearCart } = useContext(cartContext)
@@ -18,6 +16,8 @@ export default function Checkout() {
       apellido: "",
       edad: ""
    })
+
+   const mySwal = withReactContent(Swal)
 
    const navigate = useNavigate()
 
@@ -49,15 +49,15 @@ export default function Checkout() {
          let timerInterval
          mySwal.fire({
             title: 'Orden enviada!',
-            html: `Tu identificador de compra es ${orderId}`+
-                  `</br>`+
-                  'Serás redirigido a tu ticket de compra en <b></b> segundos.',
+            html: `Tu identificador de compra es ${orderId}` +
+               `</br>` +
+               'Serás redirigido a tu ticket de compra en <b></b> segundos.',
             timer: 5000,
             timerProgressBar: true,
             didOpen: () => {
                const b = mySwal.getHtmlContainer().querySelector('b')
                timerInterval = setInterval(() => {
-                  b.textContent = Math.ceil((mySwal.getTimerLeft())/1000)
+                  b.textContent = Math.ceil((mySwal.getTimerLeft()) / 1000)
                }, 100)
             },
             willClose: () => {

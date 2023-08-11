@@ -8,11 +8,12 @@
    align-items: center;
    border-radius: 20px;
 
-   form{
+   form {
       display: flex;
       flex-direction: column;
       margin: 0 0 15px 0;
-      button{
+
+      button {
          align-self: center;
       }
    }

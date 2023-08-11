@@ -2,9 +2,9 @@ import './style.scss'
 
 export default function InputComp(props) {
 
-   const {name,label,value,onChange} = props
+   const { name, label, value, onChange } = props
 
-   return(
+   return (
 
       <div className='inputComp'>
 

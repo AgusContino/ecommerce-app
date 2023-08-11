@@ -1,13 +1,15 @@
-.itemListContainer{
+.itemListContainerComp {
    display: flex;
    flex-direction: column;
    justify-content: center;
    margin: 25px;
-   .superBalls{
+
+   .superBalls {
       margin: auto;
       margin-block: 50px;
    }
 }
+
 .saludo {
    background-color: white;
    padding: 30px 80px 30px 80px;

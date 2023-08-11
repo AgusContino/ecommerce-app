@@ -1,24 +1,24 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore, writeBatch, collection, doc, getDocs, where, query, getDoc, addDoc } from "firebase/firestore"
+import { getFirestore, writeBatch, collection, doc, getDocs, where, query, getDoc, addDoc } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDppmMK9O1ePj0QLmjHoIfyzWfsNGqb5UI",
-  authDomain: "lunatica-ecommerce.firebaseapp.com",
-  projectId: "lunatica-ecommerce",
-  storageBucket: "lunatica-ecommerce.appspot.com",
-  messagingSenderId: "638822886947",
-  appId: "1:638822886947:web:7708357b3d340a72378b96"
+   apiKey: "AIzaSyDppmMK9O1ePj0QLmjHoIfyzWfsNGqb5UI",
+   authDomain: "lunatica-ecommerce.firebaseapp.com",
+   projectId: "lunatica-ecommerce",
+   storageBucket: "lunatica-ecommerce.appspot.com",
+   messagingSenderId: "638822886947",
+   appId: "1:638822886947:web:7708357b3d340a72378b96"
 };
 
 const appFirebase = initializeApp(firebaseConfig);
 const db = getFirestore(appFirebase)
 
 async function getData() {
-   const collectionRef = collection(db,"products")
+   const collectionRef = collection(db, "products")
    const collectionSnap = await getDocs(collectionRef)
    const documents = collectionSnap.docs
-   const docsData = documents.map ((item)=>{
-      return {id: item.id, ...item.data()}
+   const docsData = documents.map((item) => {
+      return { id: item.id, ...item.data() }
    })
 
    return docsData
@@ -27,42 +27,42 @@ async function getData() {
 
 async function getCategoryData(categoryURL) {
 
-   const collectionRef = collection(db,"products")
-   const q = query(collectionRef, where("genero","==",categoryURL))
+   const collectionRef = collection(db, "products")
+   const q = query(collectionRef, where("genero", "==", categoryURL))
    const collectionSnap = await getDocs(q)
    const documents = collectionSnap.docs
-   const docsData = documents.map ((item)=>{
-      return {id: item.id, ...item.data()}
+   const docsData = documents.map((item) => {
+      return { id: item.id, ...item.data() }
    })
-   
+
    return docsData
 
 }
 
 async function getProductData(idURL) {
 
-   const docRef = doc(db,"products",idURL)
+   const docRef = doc(db, "products", idURL)
    const docSnap = await getDoc(docRef)
 
-   return {id: docSnap.id, ...docSnap.data()}
+   return { id: docSnap.id, ...docSnap.data() }
 
 }
 
-async function exportOrderData(orderData){
-   const collectionRef = collection(db,"orders")
-   const createdDoc = await addDoc(collectionRef,orderData)
+async function exportOrderData(orderData) {
+   const collectionRef = collection(db, "orders")
+   const createdDoc = await addDoc(collectionRef, orderData)
    return createdDoc.id
 }
 
-async function getOrderData(orderId){
-   const docRef = doc(db,"orders",orderId)
+async function getOrderData(orderId) {
+   const docRef = doc(db, "orders", orderId)
    const docSnap = await getDoc(docRef)
 
-   return({id: docSnap.id, ...docSnap.data()})
+   return ({ id: docSnap.id, ...docSnap.data() })
 }
 
 async function exportProductsBatch() {
-   
+
    const juegos = [
       {
          nombre: "Catan",
@@ -233,14 +233,14 @@ async function exportProductsBatch() {
 
    const batch = writeBatch(db)
 
-   juegos.forEach(producto =>{
-      
-      const newDoc = doc(collection(db,"products"))
-      batch.set(newDoc,producto)
-      
+   juegos.forEach(producto => {
+
+      const newDoc = doc(collection(db, "products"))
+      batch.set(newDoc, producto)
+
    })
 
    await batch.commit()
 }
 
-export {getData, getCategoryData, getProductData, exportOrderData, getOrderData}
+export { getData, getCategoryData, getProductData, exportOrderData, getOrderData }

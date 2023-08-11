@@ -1,4 +1,4 @@
-.itemDetailContainerComp{
+.itemDetailContainerComp {
    box-sizing: border-box;
    background-color: white;
    border: 2px solid black;
@@ -6,11 +6,13 @@
    padding: 25px;
    border-radius: 20px;
    margin: 25px auto;
-   p{
+
+   p {
       margin: 5px;
    }
 }
-.superBalls{
+
+.superBalls {
    margin: 100px;
    display: flex;
    justify-content: center;

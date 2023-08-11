@@ -1,4 +1,4 @@
-.orderTicketComp{
+.orderTicketComp {
    background-color: white;
    margin: 50px auto;
    width: fit-content;
@@ -6,11 +6,12 @@
    display: flex;
    flex-direction: column;
    border-radius: 20px;
-   
-   h2{
+
+   h2 {
       align-self: center;
    }
-   button{
+
+   button {
       margin: auto;
    }
 }

@@ -18,32 +18,32 @@ function ItemListContainer(props) {
    }
    useEffect(() => {
       traerProductos();
-   },[categoryId]);
+   }, [categoryId]);
 
-      return (
-         <div className="itemListContainer">
-            <p className="saludo">{props.saludo}</p>
-            <h2 className="contenedorProductos__titulo">Nuestro catálogo lunatico</h2>
+   return (
+      <div className="itemListContainerComp">
+         <p className="saludo">{props.saludo}</p>
+         <h2 className="contenedorProductos__titulo">Nuestro catálogo lunatico</h2>
 
-            { // loader
-               productos.length === 0
-                  ? <div className="superBalls">
-                     <SuperBalls
-                        size={150}
-                        speed={1.5}
-                        color="white"
-                     />
-                  </div>
-                  : ""
-            }
-         
-            <div className="contenedorProductos__contenedor">
-               {productos.map((producto) => (
-                  <Item key={producto.id} {...producto}></Item>
-               ))}
-            </div>
+         { // loader
+            productos.length === 0
+               ? <div className="superBalls">
+                  <SuperBalls
+                     size={150}
+                     speed={1.5}
+                     color="white"
+                  />
+               </div>
+               : ""
+         }
+
+         <div className="contenedorProductos__contenedor">
+            {productos.map((producto) => (
+               <Item key={producto.id} {...producto}></Item>
+            ))}
          </div>
-      );
+      </div>
+   );
 
 
 }

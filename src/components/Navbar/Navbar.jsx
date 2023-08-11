@@ -1,10 +1,10 @@
-import "./style.css";
-import Carrito from "../Carrito/Carrito.jsx";
+import "./style.scss";
+import CartWidget from "../CartWidget/CartWidget.jsx";
 import { Link } from "react-router-dom";
 
 function Navbar() {
    return (
-      <nav>
+      <nav className="navbarComp">
          <Link to="/">
             <h1>Lunática</h1>
          </Link>
@@ -33,7 +33,7 @@ function Navbar() {
          </ul>
 
          <Link to="/carrito">
-            <Carrito />
+            <CartWidget />
          </Link>
       </nav>
    );
