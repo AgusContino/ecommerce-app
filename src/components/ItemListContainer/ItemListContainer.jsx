@@ -25,7 +25,7 @@ function ItemListContainer(props) {
          <p className="saludo">{props.saludo}</p>
          <h2 className="contenedorProductos__titulo">Nuestro catálogo lunatico</h2>
 
-         { // loader
+         {
             productos.length === 0
                ? <div className="superBalls">
                   <SuperBalls

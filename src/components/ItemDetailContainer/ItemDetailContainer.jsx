@@ -29,7 +29,7 @@ function ItemDetailContainer() {
    const stock = product.stock
 
    if (product.nombre === undefined) {
-      return ( // loader
+      return (
          <div className="superBalls">
             <SuperBalls
                size={150}

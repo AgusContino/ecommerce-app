@@ -80,13 +80,15 @@ export default function Checkout() {
          <form>
             <p>Complete sus datos</p>
 
-            <InputComp name="nombre" label="Nombre:" value={user.nombre} onChange={onInputChange} />
-            <InputComp name="apellido" label="Apellido:" value={user.apellido} onChange={onInputChange} />
-            <InputComp name="edad" label="Edad:" value={user.edad} onChange={onInputChange} />
+            <InputComp name="nombre" label="Nombre:" value={user.nombre} onChange={onInputChange} type="text" />
+            <InputComp name="apellido" label="Apellido:" value={user.apellido} onChange={onInputChange} type="text" />
+            <InputComp name="edad" label="Edad:" value={user.edad} onChange={onInputChange} type="number" />
 
             <p>Total a pagar: {totalPriceInCart()}</p>
 
-            <button onClick={handleCheckout}>Enviar orden</button>
+            <button onClick={handleCheckout}
+               disabled={!(user.nombre !== "" && user.apellido !== "" && user.edad !== "" && totalPriceInCart() !== 0)
+               }>Enviar orden</button>
 
          </form>
 

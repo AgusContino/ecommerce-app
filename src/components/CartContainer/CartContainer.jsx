@@ -23,9 +23,9 @@ function CartContainer() {
          <div className='cartList'>
             {
                cart.map((item) => {
-                  const { nombre, precio, imagen, count, id } = item
+                  const { nombre, precio, imagen,  count, id } = item
                   return (
-                     <div className='cartItem'>
+                     <div className='cartItem' key={id}>
                         <h3>{nombre}</h3>
                         <p>cantidad: {count}</p>
                         <img src={imagen} alt={nombre} />

@@ -3,6 +3,47 @@
    justify-content: space-around;
    background-color: white;
 
+   .navLink {
+      box-sizing: border-box;
+      width: 100px;
+      padding: 5px;
+      border: 2px solid black;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 100px;
+      transition: 0.3s;
+
+      &:hover {
+         background-color: black;
+         color: white;
+      }
+   }
+
+   .cartWidgetLink {
+      justify-content: center;
+      box-sizing: border-box;
+      height: fit-content;
+      padding: 10px;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 100px;
+      transition: 0.3s;
+      margin: auto 0;
+
+      &:hover {
+         background-color: black;
+         color: white;
+      }
+   }
+
+   .active {
+      background-color: black;
+      color: white;
+   }
+
+
    ul {
       list-style-type: none;
       display: flex;

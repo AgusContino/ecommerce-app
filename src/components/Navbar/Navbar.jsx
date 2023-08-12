@@ -1,6 +1,6 @@
 import "./style.scss";
 import CartWidget from "../CartWidget/CartWidget.jsx";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
    return (
@@ -11,30 +11,30 @@ function Navbar() {
 
          <ul>
             <li>
-               <Link to="/">
-                  <h2>Home</h2>
-               </Link>
+               <NavLink to="/" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>
+                  Home
+               </NavLink>
             </li>
             <li>
-               <Link to="/category/Estrategia">
-                  <h2>Estrategia</h2>
-               </Link>
+               <NavLink to="/category/Estrategia" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>
+                  Estrategia
+               </NavLink>
             </li>
             <li>
-               <Link to="/category/Rol">
-                  <h2>Rol</h2>
-               </Link>
+               <NavLink to="/category/Rol" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>
+                  Rol
+               </NavLink>
             </li>
             <li>
-               <Link to="/category/Cartas">
-                  <h2>Cartas</h2>
-               </Link>
+               <NavLink to="/category/Cartas" className={({ isActive }) => isActive ? "navLink active" : "navLink"}>
+                  Cartas
+               </NavLink>
             </li>
          </ul>
 
-         <Link to="/carrito">
-            <CartWidget />
-         </Link>
+         <NavLink to="/carrito" className={({ isActive }) => isActive ? "cartWidgetLink active" : "cartWidgetLink"}>
+            <CartWidget className="cartWidgetIcon" />
+         </NavLink>
       </nav>
    );
 }

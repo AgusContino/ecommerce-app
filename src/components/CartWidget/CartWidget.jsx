@@ -9,7 +9,7 @@ function CartWidget() {
 
    return (
       <div className="CartWidgetComp">
-         <p><FaShoppingCart /></p>
+         <FaShoppingCart className="cartIcon" />
          {
             totalItemsInCart() != 0
                ? <span>{totalItemsInCart()}</span>

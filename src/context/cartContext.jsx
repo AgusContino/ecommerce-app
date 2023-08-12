@@ -7,8 +7,17 @@ function CartContextProvider(props) {
 
    const [cart, setCart] = useState([])
 
-   function addToCart(product, count) { // mejorar: que no genere duplicados
-      setCart([...cart, { ...product, count }])
+   function addToCart(product, count) {
+      const isInCart = (cart.findIndex((item) => item.id === product.id))
+
+      if (isInCart < 0) {
+         setCart([...cart, { ...product, count }])
+      } else {
+         const newCart = [...cart]
+         newCart[isInCart].count = newCart[isInCart].count + count
+         setCart(newCart)
+      }
+
    }
 
    function removeItem(id) {
